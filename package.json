@@ -1,7 +1,7 @@
 {
   "name": "kittik-shape-code",
   "version": "0.0.0-semantic-release",
-  "description": "",
+  "description": "Shape for displaying code snippets in a Kittik",
   "main": "lib/Code.js",
   "author": "ghaiklor",
   "homepage": "https://github.com/kittikjs/shape-code#readme",
@@ -23,6 +23,8 @@
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
   "dependencies": {
+    "cardinal": "^0.7.1",
+    "js-beautify": "^1.6.2",
     "kittik-shape-basic": "3.1.0"
   },
   "devDependencies": {
