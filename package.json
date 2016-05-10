@@ -23,9 +23,9 @@
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
   "dependencies": {
-    "cardinal": "0.7.1",
     "js-beautify": "1.6.2",
-    "kittik-shape-basic": "3.1.0"
+    "kittik-shape-basic": "3.1.0",
+    "redeyed": "0.6.0"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",

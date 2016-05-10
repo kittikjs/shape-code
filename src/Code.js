@@ -1,6 +1,7 @@
 import Shape from 'kittik-shape-basic';
 import {js_beautify as beautify} from 'js-beautify';
-import {highlight} from 'cardinal';
+import redeyed from 'redeyed';
+import {DEFAULT_THEME} from './themes/default';
 
 /**
  * Implements Code shape which renders the highlighted code at specified point.
@@ -79,11 +80,21 @@ export default class Code extends Shape {
    */
   render() {
     const cursor = this.getCursor();
-    const code = highlight(this.getCode()).split('\n');
+    const codeSplits = redeyed(this.getCode(), DEFAULT_THEME).splits;
     const x = this.getX();
     const y = this.getY();
 
-    code.forEach((item, index) => cursor._stream.write(`\u001b[${y + index};${x}H${item}`));
+    cursor.moveTo(x, y);
+
+    codeSplits.forEach(split => {
+      const code = split.replace(/__.*__/, '');
+      const color = split.match(/__(.*)__/);
+
+      if (code.match(/\n/)) return cursor.moveTo(x, cursor._y + 1).write(code.replace('\n', ''));
+
+      cursor.foreground(color ? color[1] : false);
+      cursor.write(code);
+    });
 
     return this;
   }
