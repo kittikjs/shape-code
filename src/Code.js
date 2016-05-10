@@ -79,11 +79,10 @@ export default class Code extends Shape {
   render() {
     const cursor = this.getCursor();
     const code = highlight(this.getCode()).split('\n');
-    console.log(code);
     const x = this.getX();
     const y = this.getY();
 
-    code.forEach((item, index) => cursor.moveTo(x, y + index).write(item));
+    code.forEach((item, index) => cursor._stream.write(`\u001b[${y + index};${x}H${item}`));
 
     return this;
   }
