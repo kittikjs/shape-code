@@ -30,13 +30,17 @@ describe('Shape::Code', () => {
   });
 
   it('Should properly render the shape', () => {
-    const cursor = Cursor.create({stream: {write: sinon.spy()}});
+    const cursor = Cursor.create();
     const code = new Code(cursor, {code: `console.log();\nprocess.exit()`});
+    const mock = sinon.mock(cursor);
+
+    mock.expects('moveTo').atLeast(2).returns(cursor);
+    mock.expects('foreground').atLeast(11).returns(cursor);
+    mock.expects('write').atLeast(11).returns(cursor);
 
     code.render();
 
-    assert.equal(cursor._stream.write.getCall(0).args[0], `\u001b[10;10H\u001b[34mconsole\u001b[39m\u001b[32m.\u001b[39m\u001b[34mlog\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m\u001b[90m;\u001b[39m`);
-    assert.equal(cursor._stream.write.getCall(1).args[0], `\u001b[11;10H\u001b[37mprocess\u001b[39m\u001b[32m.\u001b[39m\u001b[37mexit\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m`);
+    mock.verify();
   });
 
   it('Should properly serialize shape to Object representation', () => {
