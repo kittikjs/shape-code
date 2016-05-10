@@ -15,6 +15,7 @@ export default class Code extends Shape {
    * @constructor
    * @param {Cursor} cursor Cursor instance
    * @param {Object} [options] Options object
+   * @param {String} [options.code] Code fragment that you want to show
    * @example
    * Code.create(cursor, {
    *   code: 'console.log('Your code here');'
