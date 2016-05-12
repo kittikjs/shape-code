@@ -31,7 +31,7 @@ describe('Shape::Code', () => {
 
   it('Should properly render the shape', () => {
     const cursor = Cursor.create();
-    const code = new Code(cursor, {code: `console.log();\nprocess.exit()`});
+    const code = new Code(cursor, {code: `const b = 1234;\nprocess.exit()`});
     const mock = sinon.mock(cursor);
 
     mock.expects('moveTo').atLeast(2).returns(cursor);
@@ -56,8 +56,8 @@ describe('Shape::Code', () => {
         height: 5,
         x: 10,
         y: 10,
-        background: false,
-        foreground: false
+        background: 'none',
+        foreground: 'none'
       }
     });
   });
@@ -68,9 +68,7 @@ describe('Shape::Code', () => {
       options: {
         code: 'console.log()',
         x: 'left',
-        y: 'top',
-        background: undefined,
-        foreground: undefined
+        y: 'top'
       }
     };
 
@@ -83,7 +81,7 @@ describe('Shape::Code', () => {
     assert.equal(code.getHeight(), 1);
     assert.equal(code.getX(), 0);
     assert.equal(code.getY(), 0);
-    assert.notOk(code.getBackground());
-    assert.notOk(code.getForeground());
+    assert.equal(code.getBackground(), 'none');
+    assert.equal(code.getForeground(), 'none');
   });
 });
