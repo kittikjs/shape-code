@@ -7,21 +7,21 @@ export const DEFAULT_THEME = {
   'Boolean': {
     'true': undefined,
     'false': undefined,
-    _default: '__RED_VIOLET__'
+    _default: '__INDIAN_RED__'
   },
 
   'Identifier': {
-    'undefined': '__LIGHT_GRAY__',
-    'self': '__RED_VIOLET__',
+    'undefined': '__LIGHT_SLATE_GREY__',
+    'self': '__INDIAN_RED__',
     'console': '__BLUE__',
     'log': '__BLUE__',
     'warn': '__RED__',
-    'error': '__RED_VIOLET__',
+    'error': '__INDIAN_RED__',
     _default: '__WHITE__'
   },
 
   'Null': {
-    _default: '__LIGHT_GRAY__'
+    _default: '__LIGHT_SLATE_GREY__'
   },
 
   'Numeric': {
@@ -35,7 +35,7 @@ export const DEFAULT_THEME = {
   'Keyword': {
     'break': undefined,
     'case': undefined,
-    'catch': '__CYAN__',
+    'catch': '__CYAN_1__',
     'class': undefined,
     'const': undefined,
     'continue': undefined,
@@ -47,7 +47,7 @@ export const DEFAULT_THEME = {
     'enum': undefined,
     'export': undefined,
     'extends': undefined,
-    'finally': '__CYAN__',
+    'finally': '__CYAN_1__',
     'for': undefined,
     'function': undefined,
     'if': undefined,
@@ -65,26 +65,26 @@ export const DEFAULT_THEME = {
     'static': undefined,
     'super': undefined,
     'switch': undefined,
-    'this': '__RED_VIOLET__',
+    'this': '__INDIAN_RED__',
     'throw': undefined,
-    'try': '__CYAN__',
+    'try': '__CYAN_1__',
     'typeof': undefined,
     'var': '__GREEN__',
     'void': undefined,
     'while': undefined,
     'with': undefined,
     'yield': undefined,
-    _default: '__SKY_BLUE__'
+    _default: '__SKY_BLUE_2__'
   },
 
   'Punctuator': {
-    ';': '__LIGHT_GRAY__',
+    ';': '__LIGHT_SLATE_GREY__',
     '.': '__GREEN__',
     ',': '__GREEN__',
     '{': '__YELLOW__',
     '}': '__YELLOW__',
-    '(': '__LIGHT_GRAY__',
-    ')': '__LIGHT_GRAY__',
+    '(': '__LIGHT_SLATE_GREY__',
+    ')': '__LIGHT_SLATE_GREY__',
     '[': '__YELLOW__',
     ']': '__YELLOW__',
     '<': undefined,
@@ -127,15 +127,15 @@ export const DEFAULT_THEME = {
     '>>=': undefined,
     '...': undefined,
     '>>>=': undefined,
-    _default: '__LIGHT_YELLOW__'
+    _default: '__LIGHT_YELLOW_3__'
   },
 
   Line: {
-    _default: '__LIGHT_GRAY__'
+    _default: '__LIGHT_SLATE_GREY__'
   },
 
   Block: {
-    _default: '__LIGHT_GRAY__'
+    _default: '__LIGHT_SLATE_GREY__'
   },
 
   _default: undefined

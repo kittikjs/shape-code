@@ -92,7 +92,7 @@ export default class Code extends Shape {
 
       if (code.match(/\n/)) return cursor.moveTo(x, cursor._y + 1).write(code.replace('\n', ''));
 
-      cursor.foreground(color ? color[1] : false);
+      cursor.foreground(color ? color[1] : 'none');
       cursor.write(code);
     });
 
