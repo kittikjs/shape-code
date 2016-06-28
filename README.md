@@ -13,7 +13,11 @@
 ![dependencies](https://img.shields.io/david/kittikjs/shape-code.svg)
 ![dev dependencies](https://img.shields.io/david/dev/kittikjs/shape-code.svg)
 
-This shape renders formatted and highlighted code in the slide.
+This shape renders formatted and highlighted code in the Kittik engine.
+
+| Examples |
+| -------- |
+| ![kittik](https://cloud.githubusercontent.com/assets/3625244/16410497/6ff0b5a8-3d2b-11e6-9e0b-ac987ea2339a.gif) |
 
 ## Getting Started
 
@@ -29,9 +33,14 @@ Include in your project:
 import Code from 'kittik-shape-code';
 import Cursor from 'kittik-cursor';
 
-// You must pass to render method cursor that will be used for rendering the shape
-Code.create(Cursor.create()).render();
+Code.create(Cursor.create(), {code: 'console.log("test");'}).render();
 ```
+
+You can pass in all the options from `kittik-shape-basic`.
+
+## API
+
+API declaration is [here](./API.md).
 
 ## License
 
