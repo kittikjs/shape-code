@@ -23,7 +23,7 @@
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
   "dependencies": {
-    "js-beautify": "1.6.3",
+    "js-beautify": "1.6.6",
     "kittik-shape-basic": "4.0.0",
     "redeyed": "0.6.0"
   },
